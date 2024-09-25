@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recolección de Aceite Usado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            /* Color verde */
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            color: #4CAF50;
+            /* Color verde */
+        }
+        
+        .logo {
+            width: 150px;
+            /* Ajusta el tamaño según necesites */
+            vertical-align: middle;
+        }
+        
+        .container {
+            display: flex;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .text {
+            flex: 2;
+        }
+        
+        .map-container {
+            margin-top: 20px;
+            height: 400px;
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        footer {
+            background-color: #4CAF50;
+            /* Color verde */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .social-icons i {
+            margin: 0 10px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="img/eco_aceite__2_-removebg-preview.png" alt="Logo Eco Aceite" class="logo">
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="image">
+            <img src="imagen-aceite.jpg" alt="Recolección de Aceite" style="width: 100%; border-radius: 8px;">
+        </div>
+        <div class="text">
+            <p>
+                La recolección de aceite usado es esencial para proteger nuestro medio ambiente. Aquí te explicamos cómo hacerlo de manera efectiva:
+            </p>
+            <ol>
+                <li><strong>Usa un recipiente adecuado:</strong> Consigue una botella de plástico o un frasco que esté limpio y seco.</li>
+                <li><strong>Recoge el aceite:</strong> Después de cocinar, deja que el aceite se enfríe y vierte con cuidado en el recipiente.</li>
+                <li><strong>Identifica los puntos de recolección:</strong> Consulta nuestra aplicación para encontrar los lugares designados donde puedes dejar el aceite usado.</li>
+                <li><strong>No mezcles:</strong> Evita mezclar el aceite con otros residuos para facilitar su reciclaje.</li>
+            </ol>
+            <p>
+                Al seguir estos pasos, estarás ayudando a reducir la contaminación y a proteger nuestros ecosistemas.
+            </p>
+        </div>
+    </div>
+
+    <h2>Puntos de Recolección</h2>
+    <p>Utiliza nuestra aplicación para conocer los puntos de recolección más cercanos y horarios de entrega.</p>
+
+    <div class="map-container">
+        <h2>Mapa de Recolección</h2>
+        <div id="map"></div>
+    </div>
+
+    <footer>
+        <p>Conéctate con nosotros en redes sociales</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Recolección de Aceite Usado</p>
+    </footer>
+
+    <script>
+        function initMap() {
+            // Inicializa el mapa en un punto específico (ejemplo: Medellín)
+            const medellin = {
+                lat: 6.2442,
+                lng: -75.5812
+            };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: medellin,
+            });
+            // Aquí puedes agregar marcadores de los puntos de recolección
+            const marker = new google.maps.Marker({
+                position: medellin,
+                map: map,
+                title: "Punto de Recolección",
+            });
+        }
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap">
+    </script>
+
+</body>
+
+</html>
